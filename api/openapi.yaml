@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   contact: {}
   title: Ledger API
-  version: v1.7.0-beta.1
+  version: v1.7.0-rc.1
 servers:
 - description: Production server
   url: "https://{organization}.o.numary.cloud/ledger"
@@ -1031,6 +1031,7 @@ components:
                 input: 100
                 output: 10
                 balance: 90
+          timestamp: 2000-01-23T04:56:07.000+00:00
       properties:
         details:
           type: string
@@ -1267,7 +1268,11 @@ components:
               input: 100
               output: 10
               balance: 90
+        timestamp: 2000-01-23T04:56:07.000+00:00
       properties:
+        timestamp:
+          format: date-time
+          type: string
         postings:
           items:
             $ref: '#/components/schemas/Posting'
@@ -1476,6 +1481,7 @@ components:
                 input: 100
                 output: 10
                 balance: 90
+          timestamp: 2000-01-23T04:56:07.000+00:00
         - reference: ref:001
           metadata:
             admin: true
@@ -1514,6 +1520,7 @@ components:
                 input: 100
                 output: 10
                 balance: 90
+          timestamp: 2000-01-23T04:56:07.000+00:00
       properties:
         data:
           items:
@@ -1563,6 +1570,7 @@ components:
                 input: 100
                 output: 10
                 balance: 90
+          timestamp: 2000-01-23T04:56:07.000+00:00
       properties:
         data:
           $ref: '#/components/schemas/Transaction'
