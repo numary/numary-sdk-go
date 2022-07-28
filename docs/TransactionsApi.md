@@ -106,9 +106,9 @@ import (
 func main() {
     ledger := "ledger001" // string | Name of the ledger.
     reference := "ref:001" // string | Filter transactions by reference field. (optional)
-    account := "users:001" // string | Filter transactions with postings involving given account, either as source or destination. (optional)
-    source := "users:001" // string | Filter transactions with postings involving given account at source. (optional)
-    destination := "users:001" // string | Filter transactions with postings involving given account at destination. (optional)
+    account := "users:001" // string | Filter transactions with postings involving given account, either as source or destination (regular expression placed between ^ and $). (optional)
+    source := "users:001" // string | Filter transactions with postings involving given account at source (regular expression placed between ^ and $). (optional)
+    destination := "users:001" // string | Filter transactions with postings involving given account at destination (regular expression placed between ^ and $). (optional)
     metadata := map[string]interface{}{"key": map[string]interface{}(123)} // map[string]interface{} | Filter transactions by metadata key value pairs. Nested objects can be used as seen in the example below. (optional)
 
     configuration := client.NewConfiguration()
@@ -138,9 +138,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **reference** | **string** | Filter transactions by reference field. | 
- **account** | **string** | Filter transactions with postings involving given account, either as source or destination. | 
- **source** | **string** | Filter transactions with postings involving given account at source. | 
- **destination** | **string** | Filter transactions with postings involving given account at destination. | 
+ **account** | **string** | Filter transactions with postings involving given account, either as source or destination (regular expression placed between ^ and $). | 
+ **source** | **string** | Filter transactions with postings involving given account at source (regular expression placed between ^ and $). | 
+ **destination** | **string** | Filter transactions with postings involving given account at destination (regular expression placed between ^ and $). | 
  **metadata** | [**map[string]interface{}**](map[string]interface{}.md) | Filter transactions by metadata key value pairs. Nested objects can be used as seen in the example below. | 
 
 ### Return type
